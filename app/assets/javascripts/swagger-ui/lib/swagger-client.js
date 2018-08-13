@@ -1465,6 +1465,7 @@ JQueryHttpClient.prototype.execute = function(obj) {
         value = toSplit.substring(separator + 1).trim();
       headers[name] = value;
     }
+    headers['authenticity_token'] = jQuery("meta[name='csrf-token']").prop("content")
 
     var out = {
       url: request.url,
